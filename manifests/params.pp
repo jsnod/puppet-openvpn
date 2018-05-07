@@ -28,7 +28,7 @@ class openvpn::params {
 
       # Redhat/Centos >= 7.0
       if(versioncmp($::operatingsystemrelease, '7.0') >= 0) and $::operatingsystem != 'Amazon' {
-        $additional_packages = ['easy-rsa']
+        $additional_packages = ['easy-rsa','openvpn-auth-ldap']
         $ldap_auth_plugin_location = undef
         $systemd = true
       # Redhat/Centos == 6.0
